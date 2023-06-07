@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Rocket Calculations</title>
+  <link rel="stylesheet" href="Space.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <script src="Space.js">
+  </script>
+  <style>
+  </style>  
+</head>
+
+<body>
+    <h2>Rocket Calculations</h2><br>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <div class="container">
+        <div class="navbar-nav">
+          
+          <button class="nav-link btn btn-primary" onclick="showSection('rocketEquation')">Rocket Equation</button>
+          <button class="nav-link btn btn-primary" onclick="showSection('specificImpulse')">Specific Impulse</button>
+          <button class="nav-link btn btn-primary" onclick="showSection('rocketDesign')">Rocket Design Parameters</button>
+          <button class="nav-link btn btn-primary" onclick="showSection('stability')">Stability</button>
+        
+        </div>
+      </div>
+    </nav><br>
+
+    <div id="sections">
+      <div id="rocketEquation" class="section">
+        <h3>Rocket Equation</h3>
+        <form id="rocketForm">
+          <div class="mb-3">
+            <label for="exhaustVelocity" class="form-label">Exhaust Velocity:</label>
+            <input type="number" id="exhaustVelocity" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="initialMass" class="form-label">Initial Mass:</label>
+            <input type="number" id="initialMass" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="finalMass" class="form-label">Final Mass:</label>
+            <input type="number" id="finalMass" step="0.01" class="form-control" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="calculateRocketEquation()">Calculate</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </form>
+        <p class="result" id="deltaVResult"></p>
+        <p class="result" id="massRatioResult"></p>
+        <p class="result" id="requiredFuelMassResult"></p>
+        <p class="result" id="maxPayloadMassResult"></p>
+      </div>
+
+      <div id="specificImpulse" class="section">
+        <h3>Specific Impulse</h3>
+        <form id="specificImpulseForm">
+          <div class="mb-3">
+            <label for="thrust" class="form-label">Thrust:</label>
+            <input type="number" id="thrust" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="propellantFlowRate" class="form-label">Propellant Flow Rate:</label>
+            <input type="number" id="propellantFlowRate" step="0.01" class="form-control" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="calculateSpecificImpulse()">Calculate</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </form>
+        <p class="result" id="specificImpulseResult"></p>
+      </div>
+
+      <div id="rocketDesign" class="section">
+        <h3>Rocket Design Parameters</h3>
+        <form id="rocketDesignForm">
+          <div class="mb-3">
+            <label for="engineThrust" class="form-label">Engine Thrust:</label>
+            <input type="number" id="engineThrust" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="rocketMass" class="form-label">Rocket Mass:</label>
+            <input type="number" id="rocketMass" step="0.01" class="form-control" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="calculateRocketDesign()">Calculate</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </form>
+        <p class="result" id="accelerationResult"></p>
+        <p class="result" id="forceResult"></p>
+        <p class="result" id="thrustToWeightResult"></p>
+      </div>
+
+      <div id="stability" class="section">
+        <h3>Stability</h3>
+        <form id="stabilityForm">
+          <div class="mb-3">
+            <label for="rocketDiameter" class="form-label">Diameter of Rocket Body:</label>
+            <input type="number" id="rocketDiameter" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="centerOfGravity" class="form-label">Center of Gravity:</label>
+            <input type="number" id="centerOfGravity" step="0.01" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="centerOfPressure" class="form-label">Center of Pressure:</label>
+            <input type="number" id="centerOfPressure" step="0.01" class="form-control" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="calculateStability()">Calculate</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </form>
+        <p class="result" id="stabilityResult"></p>
+        <p class="result" id="stabilityResultSUS"></p>
+      </div>
+      
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #d0c9c9;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#navbar button {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(231, 221, 168);
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#navbar button:hover {
+  background-color: #45a049;
+}
+
+#sections {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.section {
+  display: none;
+}
+
+.section h3 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #4CAF50;
+}
+
+button[type="button"] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.result {
+  margin-bottom: 10px;
+}
+
+.result::before {
+  content: 'Result: ';
+  font-weight: normal;
+}
+
+.result span {
+  font-weight: normal;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+  font-size: 12px;
+}
+
+.footer a {
+  color: #777;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
